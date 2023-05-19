@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -39,11 +39,11 @@ const Header = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>Item 1</a>
+            <Link to="/Home">Home</Link>
           </li>
 
           <li>
-            <a>Item </a>
+            <Link to="/alltoys">All Toys</Link>
           </li>
         </ul>
       </div>
