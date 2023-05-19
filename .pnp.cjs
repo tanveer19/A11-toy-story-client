@@ -42,6 +42,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:5ef8fadf073ca2c7ff8a1b24b1da00f84ea7fa205a3bb2bf0c5ca3cf8e1fcb1622445ad74a29a262f4abb53cfc5d5c103c0c3b021b4bec557d0161426936cacd#npm:18.2.0"],\
             ["react-router-dom", "virtual:5ef8fadf073ca2c7ff8a1b24b1da00f84ea7fa205a3bb2bf0c5ca3cf8e1fcb1622445ad74a29a262f4abb53cfc5d5c103c0c3b021b4bec557d0161426936cacd#npm:6.11.2"],\
+            ["react-tabs", "virtual:5ef8fadf073ca2c7ff8a1b24b1da00f84ea7fa205a3bb2bf0c5ca3cf8e1fcb1622445ad74a29a262f4abb53cfc5d5c103c0c3b021b4bec557d0161426936cacd#npm:6.0.1"],\
             ["tailwindcss", "npm:3.3.2"],\
             ["vite", "virtual:5ef8fadf073ca2c7ff8a1b24b1da00f84ea7fa205a3bb2bf0c5ca3cf8e1fcb1622445ad74a29a262f4abb53cfc5d5c103c0c3b021b4bec557d0161426936cacd#npm:4.3.7"]\
           ],\
@@ -67,6 +68,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:5ef8fadf073ca2c7ff8a1b24b1da00f84ea7fa205a3bb2bf0c5ca3cf8e1fcb1622445ad74a29a262f4abb53cfc5d5c103c0c3b021b4bec557d0161426936cacd#npm:18.2.0"],\
             ["react-router-dom", "virtual:5ef8fadf073ca2c7ff8a1b24b1da00f84ea7fa205a3bb2bf0c5ca3cf8e1fcb1622445ad74a29a262f4abb53cfc5d5c103c0c3b021b4bec557d0161426936cacd#npm:6.11.2"],\
+            ["react-tabs", "virtual:5ef8fadf073ca2c7ff8a1b24b1da00f84ea7fa205a3bb2bf0c5ca3cf8e1fcb1622445ad74a29a262f4abb53cfc5d5c103c0c3b021b4bec557d0161426936cacd#npm:6.0.1"],\
             ["tailwindcss", "npm:3.3.2"],\
             ["vite", "virtual:5ef8fadf073ca2c7ff8a1b24b1da00f84ea7fa205a3bb2bf0c5ca3cf8e1fcb1622445ad74a29a262f4abb53cfc5d5c103c0c3b021b4bec557d0161426936cacd#npm:4.3.7"]\
           ],\
@@ -2527,6 +2529,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["string-width", "npm:4.2.3"],\
             ["strip-ansi", "npm:6.0.1"],\
             ["wrap-ansi", "npm:7.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["clsx", [\
+        ["npm:1.2.1", {\
+          "packageLocation": "./.yarn/cache/clsx-npm-1.2.1-77792dc182-30befca801.zip/node_modules/clsx/",\
+          "packageDependencies": [\
+            ["clsx", "npm:1.2.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5129,6 +5140,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/react-dom",\
             "@types/react",\
             "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-tabs", [\
+        ["npm:6.0.1", {\
+          "packageLocation": "./.yarn/cache/react-tabs-npm-6.0.1-5c900a7f41-951fcf50f0.zip/node_modules/react-tabs/",\
+          "packageDependencies": [\
+            ["react-tabs", "npm:6.0.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:5ef8fadf073ca2c7ff8a1b24b1da00f84ea7fa205a3bb2bf0c5ca3cf8e1fcb1622445ad74a29a262f4abb53cfc5d5c103c0c3b021b4bec557d0161426936cacd#npm:6.0.1", {\
+          "packageLocation": "./.yarn/__virtual__/react-tabs-virtual-8f80733f60/0/cache/react-tabs-npm-6.0.1-5c900a7f41-951fcf50f0.zip/node_modules/react-tabs/",\
+          "packageDependencies": [\
+            ["react-tabs", "virtual:5ef8fadf073ca2c7ff8a1b24b1da00f84ea7fa205a3bb2bf0c5ca3cf8e1fcb1622445ad74a29a262f4abb53cfc5d5c103c0c3b021b4bec557d0161426936cacd#npm:6.0.1"],\
+            ["@types/react", "npm:18.2.6"],\
+            ["clsx", "npm:1.2.1"],\
+            ["prop-types", "npm:15.8.1"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
             "react"\
           ],\
           "linkType": "HARD"\

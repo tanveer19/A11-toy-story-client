@@ -3,6 +3,8 @@ import img1 from "../../public/images/car1.jpg";
 import img2 from "../../public/images/car2.jpg";
 import img3 from "../../public/images/car3.jpg";
 import img4 from "../../public/images/car4.jpg";
+import img7 from "../../public/images/car7.jpg";
+import img8 from "../../public/images/car8.jpg";
 
 const Home = () => {
   return (
@@ -40,6 +42,26 @@ const Home = () => {
       {/* gallery */}
       <div className="text-center">
         <h2 className="text-5xl">Gallery</h2>
+      </div>
+      <div className="container grid grid-cols-1 lg:grid-cols-3 gap-2 mx-auto">
+        <div className="w-full">
+          <img src={img8} alt="" />
+        </div>
+        <div className="w-full">
+          <img src={img7} alt="" />
+        </div>
+        <div className="w-full">
+          <img src={img8} alt="" />
+        </div>
+        <div className="w-full">
+          <img src={img7} alt="" />
+        </div>
+        <div className="w-full">
+          <img src={img8} alt="" />
+        </div>
+        <div className="w-full">
+          <img src={img7} alt="" />
+        </div>
       </div>
     </div>
   );
