@@ -7,6 +7,7 @@ import Home from "./components/Home.jsx";
 import Layout from "./components/Layout.jsx";
 import ErrorPage from "./error-page.jsx";
 import AllToys from "./components/AllToys.jsx";
+import Login from "./components/Login.jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/alltoys",
         element: <AllToys></AllToys>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
       },
     ],
   },
