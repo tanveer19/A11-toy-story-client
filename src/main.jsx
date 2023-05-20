@@ -8,6 +8,7 @@ import Layout from "./components/Layout.jsx";
 import ErrorPage from "./error-page.jsx";
 import AllToys from "./components/AllToys.jsx";
 import Login from "./components/Login.jsx";
+import SignUp from "./components/SignUp.jsx";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>,
       },
     ],
   },
