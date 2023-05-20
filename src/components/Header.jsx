@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import img1 from "../../public/images/Toy_Story_logo.png";
 
 const Header = () => {
   return (
@@ -40,6 +41,11 @@ const Header = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
+          <li>
+            <Link to="/">
+              <img src={img1} alt="" />
+            </Link>
+          </li>
           <li>
             <Link to="/">Home</Link>
           </li>
