@@ -1,18 +1,45 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const SignUp = () => {
+  const { createUser } = useContext(AuthContext);
+
   const handleSignUp = (event) => {
     event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.log(error));
   };
+
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row">
         <div className=" w-1/2 mr-12"></div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div className="card-body text-center">
-            <h1 className="text-5xl font-bold">Sign Up</h1>
+            <h1 className="text-5xl font-bold">Registration </h1>
 
             <form onSubmit={handleSignUp}>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
+                <input
+                  type="text"
+                  name="Name"
+                  placeholder="Name"
+                  className="input input-bordered"
+                />
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -34,11 +61,17 @@ const SignUp = () => {
                   placeholder="password"
                   className="input input-bordered"
                 />
+              </div>
+              <div className="form-control">
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
+                  <span className="label-text">Photo URL</span>
                 </label>
+                <input
+                  type="text"
+                  name="photoURL"
+                  placeholder="photoURL"
+                  className="input input-bordered"
+                />
               </div>
               <div className="form-control mt-6">
                 <input
