@@ -72,7 +72,12 @@ const Login = () => {
                 </div>
               </form>
 
-              <button className="btn btn-success w-1/2">Google Login</button>
+              <button
+                onClick={handleGoogleSignIn}
+                className="btn btn-success w-1/2"
+              >
+                Google Login
+              </button>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>
