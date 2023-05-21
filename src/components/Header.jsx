@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
 import img1 from "../../public/images/Toy_Story_logo.png";
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div className="navbar bg-info">
       <div className="navbar-start">
@@ -55,6 +64,18 @@ const Header = () => {
           </li>
           <li>
             <Link to="/login">Login</Link>
+          </li>
+          <li>
+            {user ? (
+              <>
+                <span>{user.email}</span>
+                <button onClick={handleLogout} className="btn btn-sm">
+                  Sign out
+                </button>
+              </>
+            ) : (
+              <Link to="/login">Login</Link>
+            )}
           </li>
         </ul>
       </div>
