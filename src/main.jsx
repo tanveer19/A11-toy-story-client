@@ -13,6 +13,7 @@ import AddAToy from "./components/AddAToy.jsx";
 import MyToys from "./components/MyToys.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 import Profile from "./components/Profile.jsx";
+import Blogs from "./components/Blogs";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>,
       },
       {
         path: "/profile",

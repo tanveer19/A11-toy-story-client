@@ -68,6 +68,9 @@ const Header = () => {
           <li>
             <Link to="/mytoys">My Toys</Link>
           </li>
+          <li>
+            <Link to="/blogs">Blogs</Link>
+          </li>
           {user && (
             <li>
               <Link to="/profile">Profile</Link>
@@ -78,7 +81,7 @@ const Header = () => {
             {user ? (
               <>
                 <span>{user.email}</span>
-                <button onClick={handleLogout} className="btn btn-sm">
+                <button onClick={handleLogout} className="bg-white">
                   Sign out
                 </button>
               </>
