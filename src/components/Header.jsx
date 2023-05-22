@@ -63,8 +63,17 @@ const Header = () => {
             <Link to="/alltoys">All Toys</Link>
           </li>
           <li>
-            <Link to="/login">Login</Link>
+            <Link to="/addatoy">Add A Toy</Link>
           </li>
+          <li>
+            <Link to="/mytoys">My Toys</Link>
+          </li>
+          {user && (
+            <li>
+              <Link to="/profile">Profile</Link>
+            </li>
+          )}
+
           <li>
             {user ? (
               <>

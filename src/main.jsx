@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home.jsx";
@@ -10,6 +9,10 @@ import AllToys from "./components/AllToys.jsx";
 import Login from "./components/Login.jsx";
 import SignUp from "./components/SignUp.jsx";
 import AuthProvider from "./providers/AuthProvider.jsx";
+import AddAToy from "./components/AddAToy.jsx";
+import MyToys from "./components/MyToys.jsx";
+import PrivateRoute from "./routes/PrivateRoute.jsx";
+import Profile from "./components/Profile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +36,30 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/profile",
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/addatoy",
+        element: (
+          <PrivateRoute>
+            <AddAToy></AddAToy>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/mytoys",
+        element: (
+          <PrivateRoute>
+            <MyToys></MyToys>
+          </PrivateRoute>
+        ),
       },
     ],
   },
