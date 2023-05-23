@@ -6,9 +6,9 @@ const ShopByCategory = () => {
   return (
     <Tabs>
       <TabList>
-        <Tab>Title 1</Tab>
-        <Tab>Title 2</Tab>
-        <Tab>Title 3</Tab>
+        <Tab>sports car</Tab>
+        <Tab>truck</Tab>
+        <Tab>mini police car</Tab>
       </TabList>
 
       <TabPanel>
