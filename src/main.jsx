@@ -14,6 +14,7 @@ import MyToys from "./components/MyToys.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 import Profile from "./components/Profile.jsx";
 import Blogs from "./components/Blogs";
+import ShopByCategory from "./components/ShopByCategory";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyToys></MyToys>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/shopbycategory",
+        element: (
+          <PrivateRoute>
+            <ShopByCategory></ShopByCategory>
           </PrivateRoute>
         ),
       },
