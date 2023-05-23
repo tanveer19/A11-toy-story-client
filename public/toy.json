@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "Picture": "https://i.ibb.co/r7rbj3z/car7.jpg",
+    "Name": "Red Car",
+    "Price": 100,
+    "Rating": 5
+  },
+  {
+    "id": 2,
+    "Picture": "https://i.ibb.co/vctLnYR/car8.jpg",
+    "Name": "Bat Car",
+    "Price": 200,
+    "Rating": 5
+  }
+]

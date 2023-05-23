@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import Toys from "./Toys";
 
 const ShopByCategory = () => {
+  const [toys, setToys] = useState([]);
+
+  useEffect(() => {
+    fetch("toy.json")
+      .then((res) => res.json())
+      .then((data) => setToys(data));
+  }, []);
+
   return (
     <Tabs>
       <TabList>
@@ -12,13 +21,25 @@ const ShopByCategory = () => {
       </TabList>
 
       <TabPanel>
-        <h2>Any content 1</h2>
+        <div>
+          {toys.map((toy) => (
+            <Toys key={toy.id} toy={toy}></Toys>
+          ))}
+        </div>
       </TabPanel>
       <TabPanel>
-        <h2>Any content 2</h2>
+        <div>
+          {toys.map((toy) => (
+            <Toys key={toy.id} toy={toy}></Toys>
+          ))}
+        </div>
       </TabPanel>
       <TabPanel>
-        <h2>Any content 3</h2>
+        <div>
+          {toys.map((toy) => (
+            <Toys key={toy.id} toy={toy}></Toys>
+          ))}
+        </div>
       </TabPanel>
     </Tabs>
   );
