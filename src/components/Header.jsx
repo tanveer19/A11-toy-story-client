@@ -5,14 +5,67 @@ import { AuthContext } from "../providers/AuthProvider";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+
   const handleLogout = () => {
     logOut()
       .then(() => {})
       .catch((error) => console.error(error));
   };
 
+  const navOptions = (
+    <>
+      <li>
+        <Link to="/">
+          <img src={img1} alt="" />
+        </Link>
+      </li>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+
+      <li>
+        <Link to="/alltoys">All Toys</Link>
+      </li>
+      <li>
+        <Link to="/addatoy">Add A Toy</Link>
+      </li>
+      <li>
+        <Link to="/mytoys">My Toys</Link>
+      </li>
+      <li>
+        <Link to="/shopbycategory">Shop by Category</Link>
+      </li>
+      <li>
+        <Link to="/blogs">Blogs</Link>
+      </li>
+      {user && (
+        <li>
+          <Link to="/profile">Profile</Link>
+        </li>
+      )}
+
+      {user && (
+        <div>
+          <img src={user.photoURL} alt="" style={{ width: "60px" }} />
+        </div>
+      )}
+
+      <li>
+        {user ? (
+          <>
+            <span>{user.email}</span>
+            <button onClick={handleLogout} className="btn btn-xs">
+              Sign out
+            </button>
+          </>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
+      </li>
+    </>
+  );
   return (
-    <div className="navbar bg-info">
+    <div className="navbar bg-sky-600">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -35,13 +88,7 @@ const Header = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-
-            <li>
-              <a>Item 2</a>
-            </li>
+            {navOptions}
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost normal-case text-xl">
@@ -49,50 +96,7 @@ const Header = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <Link to="/">
-              <img src={img1} alt="" />
-            </Link>
-          </li>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-
-          <li>
-            <Link to="/alltoys">All Toys</Link>
-          </li>
-          <li>
-            <Link to="/addatoy">Add A Toy</Link>
-          </li>
-          <li>
-            <Link to="/mytoys">My Toys</Link>
-          </li>
-          <li>
-            <Link to="/shopbycategory">Shop by Category</Link>
-          </li>
-          <li>
-            <Link to="/blogs">Blogs</Link>
-          </li>
-          {user && (
-            <li>
-              <Link to="/profile">Profile</Link>
-            </li>
-          )}
-
-          <li>
-            {user ? (
-              <>
-                <span>{user.email}</span>
-                <button onClick={handleLogout} className="bg-white">
-                  Sign out
-                </button>
-              </>
-            ) : (
-              <Link to="/login">Login</Link>
-            )}
-          </li>
-        </ul>
+        <ul className="menu menu-horizontal px-1">{navOptions}</ul>
       </div>
     </div>
   );
