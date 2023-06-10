@@ -36,7 +36,7 @@ const Header = () => {
         <Link to="/shopbycategory">Shop by Category</Link>
       </li>
       <li>
-        <Link to="/blogs">Blogs</Link>
+        <Link to="/blogs">Blog</Link>
       </li>
       {user && (
         <li>

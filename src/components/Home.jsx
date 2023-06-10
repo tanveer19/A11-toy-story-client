@@ -5,10 +5,14 @@ import img3 from "/images/car3.jpg";
 import img4 from "/images/car4.jpg";
 import img7 from "/images/car5.png";
 import img8 from "/images/car6.png";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   return (
     <div>
+      <Helmet>
+        <title>Toy Story | Home</title>
+      </Helmet>
       {/* carousel */}
       <div className="carousel w-full">
         <div id="item1" className="carousel-item w-full">
