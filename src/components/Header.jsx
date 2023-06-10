@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import img1 from "../../public/images/Toy_Story_logo.png";
+import img1 from "/images/Toy_Story_logo.png";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 

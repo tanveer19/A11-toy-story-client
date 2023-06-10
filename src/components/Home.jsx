@@ -1,10 +1,10 @@
 import React from "react";
-import img1 from "../../public/images/car1.jpg";
-import img2 from "../../public/images/car2.jpg";
-import img3 from "../../public/images/car3.jpg";
-import img4 from "../../public/images/car4.jpg";
-import img7 from "../../public/images/car7.jpg";
-import img8 from "../../public/images/car8.jpg";
+import img1 from "/images/car1.jpg";
+import img2 from "/images/car2.jpg";
+import img3 from "/images/car3.jpg";
+import img4 from "/images/car4.jpg";
+import img7 from "/images/car5.png";
+import img8 from "/images/car6.png";
 
 const Home = () => {
   return (

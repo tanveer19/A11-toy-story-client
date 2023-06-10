@@ -13,6 +13,8 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+
+  // it will not send you to login if you refresh
   const [loading, setLoading] = useState(true);
 
   const createUser = (email, password) => {
@@ -28,6 +30,7 @@ const AuthProvider = ({ children }) => {
   const logOut = () => {
     return signOut(auth);
   };
+  // observe auth state change
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
