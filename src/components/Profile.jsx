@@ -4,7 +4,6 @@ import { Helmet } from "react-helmet-async";
 const Profile = () => {
   return (
     <div>
-      {" "}
       <Helmet>
         <title>Toy Story | Profile </title>
       </Helmet>

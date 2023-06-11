@@ -16,6 +16,7 @@ import Profile from "./components/Profile.jsx";
 import Blogs from "./components/Blogs";
 import ShopByCategory from "./components/ShopByCategory";
 import { HelmetProvider } from "react-helmet-async";
+import ToysDetails from "./components/ToysDetails";
 
 const router = createBrowserRouter([
   {
@@ -70,11 +71,17 @@ const router = createBrowserRouter([
       },
       {
         path: "/shopbycategory",
+        element: <ShopByCategory></ShopByCategory>,
+      },
+      {
+        path: "/toysdetails/:id",
         element: (
           <PrivateRoute>
-            <ShopByCategory></ShopByCategory>
+            <ToysDetails></ToysDetails>
           </PrivateRoute>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/toys/${params.id}`),
       },
     ],
   },
