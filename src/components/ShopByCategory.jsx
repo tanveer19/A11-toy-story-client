@@ -29,21 +29,21 @@ const ShopByCategory = () => {
         <TabPanel>
           <div>
             {toys.map((toy) => (
-              <Toys key={toy.id} toy={toy}></Toys>
+              <Toys key={toy._id} toy={toy}></Toys>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
           <div>
             {toys.map((toy) => (
-              <Toys key={toy.id} toy={toy}></Toys>
+              <Toys key={toy._id} toy={toy}></Toys>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
           <div>
             {toys.map((toy) => (
-              <Toys key={toy.id} toy={toy}></Toys>
+              <Toys key={toy._id} toy={toy}></Toys>
             ))}
           </div>
         </TabPanel>
