@@ -3,8 +3,8 @@ import img1 from "/images/car1.jpg";
 import img2 from "/images/car2.jpg";
 import img3 from "/images/car3.jpg";
 import img4 from "/images/car4.jpg";
-import img7 from "/images/car5.png";
-import img8 from "/images/car6.png";
+import img5 from "/images/car5.png";
+import img6 from "/images/car6.png";
 import { Helmet } from "react-helmet-async";
 
 const Home = () => {
@@ -49,22 +49,22 @@ const Home = () => {
       </div>
       <div className="container grid grid-cols-1 lg:grid-cols-3 gap-2 mx-auto">
         <div className="w-full">
-          <img src={img8} alt="" />
+          <img src={img6} alt="" />
         </div>
         <div className="w-full">
-          <img src={img7} alt="" />
+          <img src={img5} alt="" />
         </div>
         <div className="w-full">
-          <img src={img8} alt="" />
+          <img src={img6} alt="" />
         </div>
         <div className="w-full">
-          <img src={img7} alt="" />
+          <img src={img5} alt="" />
         </div>
         <div className="w-full">
-          <img src={img8} alt="" />
+          <img src={img6} alt="" />
         </div>
         <div className="w-full">
-          <img src={img7} alt="" />
+          <img src={img5} alt="" />
         </div>
       </div>
     </div>
