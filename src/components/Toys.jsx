@@ -13,7 +13,7 @@ const Toys = ({ toy }) => {
           <p>Rating: {toy.Rating}</p>
           {/* The button to open modal */}
           <label htmlFor={toy._id} className="btn">
-            open modal
+            view details
           </label>
 
           {/* Put this part before </body> tag */}
