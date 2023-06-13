@@ -15,16 +15,30 @@ const AddAToy = () => {
       <Helmet>
         <title>Toy Story | Add a Toy </title>
       </Helmet>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      {/* "handleSubmit" will validate your inputs before invoking "onSubmit"  */}
+      <form
+        className="flex flex-col w-1/3 mx-auto my-5"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         {/* register your input into the hook by invoking the "register" function */}
-        <input defaultValue="test" {...register("example")} />
+        <input
+          className="border rounded p-2 my-2"
+          defaultValue="test"
+          {...register("example")}
+        />
 
         {/* include validation with required or other standard HTML validation rules */}
-        <input {...register("exampleRequired", { required: true })} />
+        <input
+          className="border rounded p-2 my-2"
+          {...register("exampleRequired", { required: true })}
+        />
         {/* errors will return when field validation fails  */}
         {errors.exampleRequired && <span>This field is required</span>}
 
-        <input type="submit" />
+        <input
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          type="submit"
+        />
       </form>
     </div>
   );
