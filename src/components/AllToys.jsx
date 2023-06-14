@@ -19,8 +19,8 @@ const AllToys = () => {
       </Helmet>
 
       <div>
-        {toys?.map((toy) => (
-          <div className="overflow-x-auto">
+        <div className="overflow-x-auto">
+          <table className="table table-xs">
             <thead>
               <tr>
                 <th>Seller</th>
@@ -29,14 +29,13 @@ const AllToys = () => {
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>View Details</th>
+                <th>Description</th>
               </tr>
             </thead>
-            <table className="table">
-              {/* head */}
-              {/* <Toy key={toy._id} toy={toy}></Toy> */}
-              <tbody>
-                {/* row 1 */}
-                <tr>
+
+            <tbody>
+              {toys?.map((toy) => (
+                <tr key={toy._id}>
                   <th>
                     <label>
                       <input type="checkbox" className="checkbox" />
@@ -60,10 +59,10 @@ const AllToys = () => {
                   <td>{toy.quantity}</td>
                   <td>{toy.description}</td>
                 </tr>
-              </tbody>
-            </table>
-          </div>
-        ))}
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
