@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import Toy from "./Toy";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
@@ -24,6 +23,8 @@ const AllToys = () => {
             <thead>
               <tr>
                 <th>Select</th>
+                <th>Toy Image</th>
+                <th>Seller Name</th>
                 <th>Toy Name</th>
                 <th>Sub-Category</th>
                 <th>Price</th>
@@ -43,16 +44,12 @@ const AllToys = () => {
                   </th>
                   <td>
                     <div className="flex items-center space-x-3">
-                      <div className="avatar">
-                        <div className="mask mask-squircle w-12 h-12">
-                          <img src={toy.URL} alt="" />
-                        </div>
-                      </div>
-                      <div>
-                        <div className="font-bold">{toy.sellerName}</div>
+                      <div className="mask mask-squircle w-20 h-20">
+                        <img src={toy.URL} alt="toy image" />
                       </div>
                     </div>
                   </td>
+                  <td>{toy.sellerName}</td>
                   <td>{toy.name}</td>
                   <td>{toy.subCategory}</td>
                   <td>{toy.price}</td>
