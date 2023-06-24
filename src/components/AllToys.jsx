@@ -23,12 +23,12 @@ const AllToys = () => {
           <table className="table table-xs">
             <thead>
               <tr>
-                <th>Seller</th>
+                <th>Select</th>
                 <th>Toy Name</th>
                 <th>Sub-Category</th>
                 <th>Price</th>
+                <th>Rating</th>
                 <th>Quantity</th>
-                <th>View Details</th>
                 <th>Description</th>
               </tr>
             </thead>
@@ -56,6 +56,7 @@ const AllToys = () => {
                   <td>{toy.name}</td>
                   <td>{toy.subCategory}</td>
                   <td>{toy.price}</td>
+                  <td>{toy.rating}</td>
                   <td>{toy.quantity}</td>
                   <td>{toy.description}</td>
                 </tr>

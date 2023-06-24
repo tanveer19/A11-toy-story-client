@@ -31,7 +31,9 @@ const AddAToy = () => {
       <Helmet>
         <title>Toy Story | Add a Toy </title>
       </Helmet>
+
       {/* "handleSubmit" will validate your inputs before invoking "onSubmit"  */}
+
       <form
         className="flex flex-col w-1/3 mx-auto my-5"
         onSubmit={handleSubmit(onSubmit)}
@@ -58,16 +60,22 @@ const AddAToy = () => {
           value={user.email}
           {...register("sellerEmail")}
         />
-        {/* <input
-          className="border rounded p-2 my-2"
-          placeholder="Sub Category "
-          {...register("subCategory")}
-        /> */}
-        <select className="text-input" {...register("subCategory")}>
-          <option value="sports">Sports Car</option>
-          <option value="truck">truck</option>
-          <option value="police">Police Car</option>
-        </select>
+
+        <div className="">
+          <select
+            className={`appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline ${
+              errors.subCategory ? "border-red-500" : ""
+            }`}
+            id="subCategory"
+            {...register("subCategory", { required: true })}
+          >
+            <option value="">Select a Sub Category</option>
+            <option value="sports">Sports Car</option>
+            <option value="truck">Truck</option>
+            <option value="police">Police Car</option>
+          </select>
+        </div>
+
         <input
           className="border rounded p-2 my-2"
           placeholder="Price "
@@ -88,14 +96,6 @@ const AddAToy = () => {
           placeholder="Detail Description "
           {...register("description")}
         />
-
-        {/* include validation with required or other standard HTML validation rules */}
-        {/* <input
-          className="border rounded p-2 my-2"
-          {...register("exampleRequired", { required: true })}
-        /> */}
-        {/* errors will return when field validation fails  */}
-        {/* {errors.exampleRequired && <span>This field is required</span>} */}
 
         <input
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
