@@ -58,11 +58,16 @@ const AddAToy = () => {
           value={user.email}
           {...register("sellerEmail")}
         />
-        <input
+        {/* <input
           className="border rounded p-2 my-2"
           placeholder="Sub Category "
           {...register("subCategory")}
-        />
+        /> */}
+        <select className="text-input" {...register("subCategory")}>
+          <option value="sports">Sports Car</option>
+          <option value="truck">truck</option>
+          <option value="police">Police Car</option>
+        </select>
         <input
           className="border rounded p-2 my-2"
           placeholder="Price "

@@ -7,6 +7,12 @@ import { Helmet } from "react-helmet-async";
 const ShopByCategory = () => {
   const [toys, setToys] = useState([]);
 
+  const [activeTab, setActivetab] = useState("sports");
+
+  const handleTabClick = (tabName) => {
+    setActivetab(tabName);
+  };
+
   useEffect(() => {
     fetch("https://2-19-a11-toy-server-tanveer19.vercel.app/toys")
       .then((res) => res.json())
@@ -18,7 +24,32 @@ const ShopByCategory = () => {
       <Helmet>
         <title>Toy Story | Shop By Category </title>
       </Helmet>
-
+      <div className="flex p-4 m-4">
+        <div
+          onClick={() => handleTabClick("sports")}
+          className={` ${
+            activeTab == "sports" ? "bg-red-700 text-white mr-2" : ""
+          }`}
+        >
+          Sports Car
+        </div>
+        <div
+          onClick={() => handleTabClick("truck")}
+          className={` ${
+            activeTab == "truck" ? "bg-red-700 text-white mx-2" : ""
+          }`}
+        >
+          Truck
+        </div>
+        <div
+          onClick={() => handleTabClick("police")}
+          className={` ${
+            activeTab == "police" ? "bg-red-700 text-white ml-2" : ""
+          }`}
+        >
+          Police Car
+        </div>
+      </div>
       <Tabs>
         <TabList>
           <Tab>sports car</Tab>
