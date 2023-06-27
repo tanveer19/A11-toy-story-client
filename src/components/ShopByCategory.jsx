@@ -25,11 +25,12 @@ const ShopByCategory = () => {
       <Helmet>
         <title>Toy Story | Shop By Category </title>
       </Helmet>
-      <div className="flex p-4 m-4">
+
+      <div className="flex m-4 justify-evenly ">
         <div
           onClick={() => handleTabClick("sports")}
           className={` ${
-            activeTab == "sports" ? "bg-red-700 text-white mr-2" : ""
+            activeTab == "sports" ? "badge badge-neutral text-white mx-3" : ""
           }`}
         >
           Sports Car
@@ -37,7 +38,7 @@ const ShopByCategory = () => {
         <div
           onClick={() => handleTabClick("truck")}
           className={` ${
-            activeTab == "truck" ? "bg-red-700 text-white mx-2" : ""
+            activeTab == "truck" ? "badge badge-info text-white mx-3" : ""
           }`}
         >
           Truck
@@ -45,7 +46,7 @@ const ShopByCategory = () => {
         <div
           onClick={() => handleTabClick("police")}
           className={` ${
-            activeTab == "police" ? "bg-red-700 text-white ml-2" : ""
+            activeTab == "police" ? "badge badge-accent text-white mx-3" : ""
           }`}
         >
           Police Car
