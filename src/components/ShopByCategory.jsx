@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import Toys from "./Toys";
 import { Helmet } from "react-helmet-async";
 
 const ShopByCategory = () => {
@@ -9,15 +7,18 @@ const ShopByCategory = () => {
 
   const [activeTab, setActivetab] = useState("sports");
 
-  const handleTabClick = (tabName) => {
-    setActivetab(tabName);
-  };
-
   useEffect(() => {
     fetch("https://2-19-a11-toy-server-tanveer19.vercel.app/toys")
       .then((res) => res.json())
-      .then((data) => setToys(data));
+      .then((result) => setToys(result));
   }, []);
+
+  const result = toys?.filter((toy) => toy.status == activeTab);
+  console.log(result);
+
+  const handleTabClick = (tabName) => {
+    setActivetab(tabName);
+  };
 
   return (
     <div>
@@ -50,52 +51,6 @@ const ShopByCategory = () => {
           Police Car
         </div>
       </div>
-      <Tabs>
-        <TabList>
-          <Tab>
-            <div className="dropdown">
-              <label tabIndex={0} className="btn m-1">
-                Sports car
-              </label>
-              <ul
-                tabIndex={0}
-                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-              >
-                <li>
-                  <a>Item 1</a>
-                </li>
-                <li>
-                  <a>Item 2</a>
-                </li>
-              </ul>
-            </div>
-          </Tab>
-          <Tab>truck</Tab>
-          <Tab>mini police car</Tab>
-        </TabList>
-
-        <TabPanel>
-          <div>
-            {toys.map((toy) => (
-              <Toys key={toy._id} toy={toy}></Toys>
-            ))}
-          </div>
-        </TabPanel>
-        <TabPanel>
-          <div>
-            {toys.map((toy) => (
-              <Toys key={toy._id} toy={toy}></Toys>
-            ))}
-          </div>
-        </TabPanel>
-        <TabPanel>
-          <div>
-            {toys.map((toy) => (
-              <Toys key={toy._id} toy={toy}></Toys>
-            ))}
-          </div>
-        </TabPanel>
-      </Tabs>
     </div>
   );
 };
