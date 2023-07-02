@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-// import "react-tabs/style/react-tabs.css";
 import ShopToy from "./ShopToy";
 
 const ShopByCategory = () => {
@@ -9,13 +8,10 @@ const ShopByCategory = () => {
   const [activeTab, setActivetab] = useState("sports");
 
   useEffect(() => {
-    fetch("http://localhost:5000/alltoys")
+    fetch(`http://localhost:5000/alltoys/${activeTab}`)
       .then((res) => res.json())
       .then((result) => setToys(result));
   }, []);
-
-  // const result = toys?.filter((toy) => toy.status == activeTab);
-  // console.log(result);
 
   const handleTabClick = (tabName) => {
     setActivetab(tabName);
@@ -27,11 +23,11 @@ const ShopByCategory = () => {
         <title>Toy Story | Shop By Category </title>
       </Helmet>
 
-      <div className="grid grid-cols-3">
+      {/* <div className="grid grid-cols-3">
         {toys.map((toy) => (
           <ShopToy key={toy._id} toy={toy}></ShopToy>
         ))}
-      </div>
+      </div> */}
 
       <div className="flex m-4 justify-evenly ">
         <div
