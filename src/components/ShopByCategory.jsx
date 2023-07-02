@@ -11,7 +11,7 @@ const ShopByCategory = () => {
     fetch(`http://localhost:5000/alltoys/${activeTab}`)
       .then((res) => res.json())
       .then((result) => setToys(result));
-  }, []);
+  }, [activeTab]);
 
   const handleTabClick = (tabName) => {
     setActivetab(tabName);
@@ -22,12 +22,6 @@ const ShopByCategory = () => {
       <Helmet>
         <title>Toy Story | Shop By Category </title>
       </Helmet>
-
-      {/* <div className="grid grid-cols-3">
-        {toys.map((toy) => (
-          <ShopToy key={toy._id} toy={toy}></ShopToy>
-        ))}
-      </div> */}
 
       <div className="flex m-4 justify-evenly ">
         <div
@@ -54,6 +48,12 @@ const ShopByCategory = () => {
         >
           Police Car
         </div>
+      </div>
+
+      <div className="grid grid-cols-3">
+        {toys.map((toy) => (
+          <ShopToy key={toy._id} toy={toy}></ShopToy>
+        ))}
       </div>
     </div>
   );
