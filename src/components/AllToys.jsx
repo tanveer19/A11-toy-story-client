@@ -44,8 +44,12 @@ const AllToys = () => {
                   </th>
                   <td>
                     <div className="flex items-center space-x-3">
-                      <div className="mask mask-squircle w-20 h-20">
-                        <img src={toy.URL} alt="toy image" />
+                      <div className="mask mask-squircle w-20 h-20 flex">
+                        <img
+                          src={toy.URL}
+                          alt="toy image"
+                          className="self-center"
+                        />
                       </div>
                     </div>
                   </td>
