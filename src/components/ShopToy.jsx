@@ -9,7 +9,10 @@ const shopToy = ({ toy }) => {
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="card-title">Category: {toy.subCategory}</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <h2 className="card-title">Toy Name: {toy.name}</h2>
+          <p className="card-title">Price: {toy.price}</p>
+          <p className="card-title">Rating: {toy.rating}</p>
+          <button className="btn">View Details</button>
         </div>
       </div>
     </div>
