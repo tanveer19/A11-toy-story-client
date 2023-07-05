@@ -7,13 +7,11 @@ const MyToys = () => {
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
-    fetch(
-      `https://2-19-a11-toy-server-tanveer19.vercel.app/mytoys/${user?.email}`
-    )
+    fetch(`http://localhost:5000/mytoys/${user?.email}`)
       .then((result) => result.json())
       .then((data) => {
         console.log(data);
-        // setToys(data);
+        setToys(data);
       });
   }, [user]);
 
