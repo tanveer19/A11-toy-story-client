@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import Toy from "./Toy";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
@@ -35,32 +36,8 @@ const AllToys = () => {
             </thead>
 
             <tbody>
-              {toys?.map((toy) => (
-                <tr key={toy._id}>
-                  <th>
-                    <label>
-                      <input type="checkbox" className="checkbox" />
-                    </label>
-                  </th>
-                  <td>
-                    <div className="flex items-center space-x-3">
-                      <div className="mask mask-squircle w-20 h-20 flex">
-                        <img
-                          src={toy.URL}
-                          alt="toy image"
-                          className="self-center"
-                        />
-                      </div>
-                    </div>
-                  </td>
-                  <td>{toy.sellerName}</td>
-                  <td>{toy.name}</td>
-                  <td>{toy.subCategory}</td>
-                  <td>{toy.price}</td>
-                  <td>{toy.rating}</td>
-                  <td>{toy.quantity}</td>
-                  <td>{toy.description}</td>
-                </tr>
+              {toys.map((toy) => (
+                <Toy key={toy._id} toy={toy}></Toy>
               ))}
             </tbody>
           </table>
