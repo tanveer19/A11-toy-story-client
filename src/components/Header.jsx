@@ -54,7 +54,10 @@ const Header = () => {
         {user ? (
           <>
             <span>{user.email}</span>
-            <button onClick={handleLogout} className="btn btn-xs">
+            <button
+              onClick={handleLogout}
+              className="btn btn-xs self-center w-fit"
+            >
               Sign out
             </button>
           </>

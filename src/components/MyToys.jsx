@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../providers/AuthProvider";
+import Toy from "./Toy";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -37,7 +38,7 @@ const MyToys = () => {
             </thead>
 
             <tbody>
-              {toys?.map((toy) => (
+              {/* {toys?.map((toy) => (
                 <tr key={toy._id}>
                   <th>
                     <label>
@@ -62,6 +63,10 @@ const MyToys = () => {
                   <td>{toy.quantity}</td>
                   <td>{toy.description}</td>
                 </tr>
+              ))} */}
+
+              {toys.map((toy) => (
+                <Toy key={toy._id} toy={toy}></Toy>
               ))}
             </tbody>
           </table>
