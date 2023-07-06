@@ -47,15 +47,15 @@ const Home = () => {
       <div className="text-center">
         <h2 className="text-5xl">Gallery</h2>
       </div>
-      <div className="container grid grid-cols-1 lg:grid-cols-3 gap-2 mx-auto">
+      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-2 mx-auto">
         <div className="w-full">
-          <img src={img6} alt="" />
+          <img src={img6} alt="" data-aos="fade-zoom-in" />
         </div>
         <div className="w-full">
-          <img src={img5} alt="" />
+          <img src={img5} alt="" data-aos="fade-zoom-in" />
         </div>
         <div className="w-full">
-          <img src={img6} alt="" />
+          <img src={img6} alt="" data-aos="fade-zoom-in" />
         </div>
         <div className="w-full">
           <img src={img5} alt="" />
