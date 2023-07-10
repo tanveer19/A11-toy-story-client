@@ -29,7 +29,7 @@ const MyToys = () => {
       <Helmet>
         <title>Toy Story | My Toys </title>
       </Helmet>
-      <div className="m-auto w-1/4">
+      <div className="m-auto w-1/3">
         <input
           onChange={(e) => setSearchText(e.target.value)}
           type="text"
@@ -45,6 +45,7 @@ const MyToys = () => {
           <table className="table table-xs">
             <thead>
               <tr>
+                <th>#</th>
                 <th>Select</th>
                 <th>Toy Image</th>
                 <th>Seller Name</th>
@@ -60,8 +61,40 @@ const MyToys = () => {
             </thead>
 
             <tbody>
-              {toys.map((toy) => (
-                <Toy key={toy._id} toy={toy}></Toy>
+              {toys.map((toy, index) => (
+                <tr>
+                  <td>{index + 1}</td>
+                  <td>
+                    <label>
+                      <input type="checkbox" className="checkbox" />
+                    </label>
+                  </td>
+                  <td>
+                    <div className="flex items-center space-x-3">
+                      <div className="mask mask-squircle w-20 h-20 flex">
+                        <img
+                          src={toy.URL}
+                          alt="toy image"
+                          className="self-center"
+                        />
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>{toy.sellerName}</td>
+                  <td>{toy.name}</td>
+                  <td>{toy.subCategory}</td>
+                  <td>{toy.price}</td>
+                  <td>{toy.rating}</td>
+                  <td>{toy.quantity}</td>
+                  <td>{toy.description}</td>
+                  <td>
+                    <button className="btn">Edit</button>
+                  </td>
+                  <td>
+                    <button className="btn">Delete</button>
+                  </td>
+                </tr>
               ))}
             </tbody>
           </table>
