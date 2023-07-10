@@ -26,6 +26,22 @@ const MyToys = () => {
       });
   };
 
+  const handleToyUpdate = (data) => {
+    console.log(data);
+    fetch(`http://localhost:5000/updateToy/${data._id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.modifiedCount > 0) {
+          setControl(!control);
+        }
+        console.log(result);
+      });
+  };
+
   return (
     <div>
       <Helmet>
@@ -90,17 +106,40 @@ const MyToys = () => {
                   <td>{toy.rating}</td>
                   <td>{toy.quantity}</td>
                   <td>{toy.description}</td>
+
                   <td>
-                    <button
+                    {/* The button to open modal */}
+                    <label
+                      htmlFor="my_modal_7"
                       className="btn"
-                      onClick={() => setModalShow.showModal()(true)}
+                      onClick={() => setModalShow(true)}
                     >
                       Edit
-                    </button>
+                    </label>
+
+                    {/* Put this part before </body> tag */}
+                    <input
+                      type="checkbox"
+                      id="my_modal_7"
+                      className="modal-toggle"
+                    />
+                    <div className="modal">
+                      <div className="modal-box">
+                        <h3 className="text-lg font-bold">Hello!</h3>
+                        <p className="py-4">
+                          This modal works with a hidden checkbox!
+                        </p>
+                      </div>
+                      <label className="modal-backdrop" htmlFor="my_modal_7">
+                        Close
+                      </label>
+                    </div>
+
                     <UpdateToyModal
                       show={modalShow}
                       onHide={() => setModalShow(false)}
                       toy={toy}
+                      handleToyUpdate={handleToyUpdate}
                     ></UpdateToyModal>
                   </td>
                   <td>
