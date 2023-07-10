@@ -54,6 +54,8 @@ const MyToys = () => {
                 <th>Rating</th>
                 <th>Quantity</th>
                 <th>Description</th>
+                <th>Edit</th>
+                <th>Action</th>
               </tr>
             </thead>
 

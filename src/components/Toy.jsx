@@ -34,6 +34,12 @@ const Toy = ({ toy }) => {
       <td>{rating}</td>
       <td>{quantity}</td>
       <td>{description}</td>
+      <td>
+        <button className="btn">Edit</button>
+      </td>
+      <td>
+        <button className="btn">Delete</button>
+      </td>
     </tr>
   );
 };
