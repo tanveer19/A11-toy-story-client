@@ -2,11 +2,13 @@ import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../providers/AuthProvider";
 import Toy from "./Toy";
+import UpdateToyModal from "./UpdateToyModal";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [modalShow, setModalShow] = React.useState(false);
 
   useEffect(() => {
     fetch(`http://localhost:5000/mytoys?sellerEmail=${user?.email}`)
@@ -89,7 +91,17 @@ const MyToys = () => {
                   <td>{toy.quantity}</td>
                   <td>{toy.description}</td>
                   <td>
-                    <button className="btn">Edit</button>
+                    <button
+                      className="btn"
+                      onClick={() => setModalShow.showModal()(true)}
+                    >
+                      Edit
+                    </button>
+                    <UpdateToyModal
+                      show={modalShow}
+                      onHide={() => setModalShow(false)}
+                      toy={toy}
+                    ></UpdateToyModal>
                   </td>
                   <td>
                     <button className="btn">Delete</button>
