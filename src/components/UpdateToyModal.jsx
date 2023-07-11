@@ -12,14 +12,22 @@ const UpdateToyModal = (props) => {
   const { handleToyUpdate } = props;
   //   console.log(handleToyUpdate);
   return (
-    <div>
-      {/* Put this part before </body> tag */}
-
+    <div {...props}>
       <input type="checkbox" id="my_modal_7" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box">
-          <h3 className="text-lg font-bold">{props.toy.sellerName}</h3>
-          <p className="py-4">{props.toy.name}</p>
+          <h3 className="text-lg font-bold"> Update Toy</h3>
+          <input
+            className="text-input"
+            {...register("title")}
+            placeholder="title"
+            defaultValue={props?.toy.name}
+          />
+          <input
+            className="text-input d-none"
+            {...register("_id")}
+            value={props?.toy?._id}
+          />
         </div>
         <label className="modal-backdrop" htmlFor="my_modal_7">
           Close
