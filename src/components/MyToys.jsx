@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../providers/AuthProvider";
-import Toy from "./Toy";
 import UpdateToyModal from "./UpdateToyModal";
 
 const MyToys = () => {
@@ -80,7 +79,7 @@ const MyToys = () => {
 
             <tbody>
               {toys.map((toy, index) => (
-                <tr>
+                <tr key={toy._id}>
                   <td>{index + 1}</td>
                   <td>
                     <label>

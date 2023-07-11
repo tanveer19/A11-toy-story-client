@@ -9,27 +9,32 @@ const UpdateToyModal = (props) => {
     formState: { errors },
   } = useForm();
 
-  const { handleToyUpdate } = props;
-  //   console.log(handleToyUpdate);
+  const { toy, handleToyUpdate, onHide } = props;
+
+  const onSubmit = (data) => {
+    handleToyUpdate(data);
+  };
   return (
     <div {...props}>
       <input type="checkbox" id="my_modal_7" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box">
           <h3 className="text-lg font-bold"> Update Toy</h3>
-          <input
-            className="text-input"
-            {...register("title")}
-            placeholder="title"
-            defaultValue={props?.toy.name}
-          />
-          <input
-            className="text-input d-none"
-            {...register("_id")}
-            value={props?.toy?._id}
-          />
+
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <input
+              className="text-input"
+              {...register("title")}
+              placeholder="Title"
+              defaultValue={toy?.name}
+            />
+            <input type="hidden" {...register("_id")} defaultValue={toy?._id} />
+            <button type="submit" className="btn">
+              Update
+            </button>
+          </form>
         </div>
-        <label className="modal-backdrop" htmlFor="my_modal_7">
+        <label className="modal-backdrop" htmlFor="my_modal_7" onClick={onHide}>
           Close
         </label>
       </div>
