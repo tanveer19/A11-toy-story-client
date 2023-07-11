@@ -16,7 +16,7 @@ const UpdateToyModal = (props) => {
 
   return (
     <div {...props}>
-      <input type="checkbox" id="my_modal_7" className="modal-toggle" />
+      <input type="checkbox" id={props?.toy?._id} className="modal-toggle" />
       <div className="modal">
         <div className="modal-box">
           <h3 className="text-lg font-bold">Update </h3>
@@ -33,20 +33,21 @@ const UpdateToyModal = (props) => {
             />
             <input
               className="form-input d-none"
-              {...register("_id")}
-              value={props?.toy?._id}
+              {...register("quantity")}
+              placeholder="quantity"
+              value={props?.toy?.quantity}
             />
 
             <input
               className="form-input"
               {...register("name", { required: true })}
-              placeholder="Salary"
+              placeholder="Toy Name"
               defaultValue={props?.toy?.name}
             />
             <input
               className="form-input"
               {...register("price", { required: true })}
-              placeholder="Vacancy"
+              placeholder="price"
               defaultValue={props?.toy?.price}
             />
             <select
@@ -54,33 +55,15 @@ const UpdateToyModal = (props) => {
               {...register("subCategory")}
               defaultValue={props?.toy?.subCategory}
             >
-              <option value="Engineering">Engineering</option>
-              <option value="Editor">Editor</option>
-              <option value="Writer">Writer</option>
-              <option value="Developer">Developer</option>
+              <option value="sports">Sports Car</option>
+              <option value="truck">Truck</option>
+              <option value="police">Police Car</option>
             </select>
-            <select className="form-select" {...register("status")}>
-              <option value="remote">Remote</option>
-              <option value="offline">Offline</option>
-            </select>
-            <input
-              className="form-input"
-              {...register("URL")}
-              placeholder="URL link"
-              type="url"
-              defaultValue={props?.toy?.URL}
-            />
-            <input
-              className="form-input"
-              {...register("rating")}
-              placeholder="Deadline"
-              type="date"
-              defaultValue={props?.toy?.rating}
-            />
+
             <input className="btn" value="Update Job" type="submit" />
           </form>
         </div>
-        <label className="modal-backdrop" htmlFor="my_modal_7" />
+        <label className="modal-backdrop" htmlFor={props?.toy?._id} />
       </div>
     </div>
   );

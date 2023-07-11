@@ -109,7 +109,7 @@ const MyToys = () => {
                   <td>
                     {/* The button to open modal */}
                     <label
-                      htmlFor="my_modal_7"
+                      htmlFor={toy?._id}
                       className="btn"
                       onClick={() => setModalShow(true)}
                     >
