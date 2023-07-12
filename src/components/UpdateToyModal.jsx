@@ -15,7 +15,7 @@ const UpdateToyModal = (props) => {
   };
 
   return (
-    <div {...props}>
+    <div>
       <input type="checkbox" id={props?.toy?._id} className="modal-toggle" />
       <div className="modal">
         <div className="modal-box">
