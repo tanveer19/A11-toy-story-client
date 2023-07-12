@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddAToy = () => {
   const { user } = useContext(AuthContext);
@@ -14,6 +15,12 @@ const AddAToy = () => {
   } = useForm();
 
   const onSubmit = (data) => {
+    Swal.fire({
+      title: "Toy Added",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+
     fetch("http://localhost:5000/postToy", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -23,8 +30,6 @@ const AddAToy = () => {
       .then((result) => {
         console.log(result);
       });
-
-    console.log(data);
   };
 
   return (
@@ -79,17 +84,20 @@ const AddAToy = () => {
 
         <input
           className="border rounded p-2 my-2"
-          placeholder="Price "
+          placeholder="Price"
+          type="number"
           {...register("price")}
         />
         <input
           className="border rounded p-2 my-2"
-          placeholder="Rating "
+          placeholder="Rating"
+          type="number"
           {...register("rating")}
         />
         <input
           className="border rounded p-2 my-2"
           placeholder="Available Quantity "
+          type="number"
           {...register("quantity")}
         />
         <input

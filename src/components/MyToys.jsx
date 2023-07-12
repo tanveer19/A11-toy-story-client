@@ -28,17 +28,31 @@ const MyToys = () => {
   };
   // update using modal
   const handleToyUpdate = (data) => {
-    fetch(`http://localhost:5000/updateToy/${data._id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        if (result.modifiedCount > 0) {
-          setControl(!control);
-        }
-      });
+    Swal.fire({
+      title: "Do you want to save the changes?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Save",
+      denyButtonText: `Don't save`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/updateToy/${data._id}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        })
+          .then((res) => res.json())
+          .then((result) => {
+            if (result.modifiedCount > 0) {
+              setControl(!control);
+              Swal.fire("Saved!", "", "success");
+              setModalShow(false); // Close the modal
+            }
+          });
+      } else if (result.isDenied) {
+        Swal.fire("Changes are not saved", "", "info");
+      }
+    });
   };
 
   // delete
@@ -58,7 +72,6 @@ const MyToys = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
               setControl(!control);

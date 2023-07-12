@@ -21,7 +21,7 @@ const UpdateToyModal = (props) => {
         <div className="modal-box">
           <h3 className="text-lg font-bold text-center m-3">Update Toy</h3>
           <form
-            className="flex flex-col"
+            className="grid grid-cols-2"
             onSubmit={handleSubmit(handleToyUpdate)}
           >
             {errors.exampleRequired && <span>This field is required</span>}
@@ -29,7 +29,7 @@ const UpdateToyModal = (props) => {
             <span className="text-2xl">Seller Name: </span>
 
             <input
-              className="form-input"
+              className="form-input text-2xl"
               {...register("sellerName")}
               placeholder="Title"
               defaultValue={props?.toy?.sellerName}
@@ -38,7 +38,7 @@ const UpdateToyModal = (props) => {
             <span className="text-2xl">Toy Name: </span>
 
             <input
-              className="form-input"
+              className="form-input text-2xl"
               {...register("name", { required: true })}
               placeholder="Toy Name"
               defaultValue={props?.toy?.name}
@@ -47,7 +47,7 @@ const UpdateToyModal = (props) => {
             <span className="text-2xl">Price : </span>
 
             <input
-              className="form-input"
+              className="form-input text-2xl"
               {...register("price")}
               placeholder="price"
               defaultValue={props?.toy?.price}
@@ -55,7 +55,7 @@ const UpdateToyModal = (props) => {
             <span className="text-2xl">Rating : </span>
 
             <input
-              className="form-input"
+              className="form-input text-2xl"
               {...register("rating")}
               placeholder="rating"
               type="number"
@@ -65,7 +65,7 @@ const UpdateToyModal = (props) => {
             <span className="text-2xl">Quantity : </span>
 
             <input
-              className="form-input"
+              className="form-input text-2xl"
               {...register("quantity")}
               placeholder="quantity"
               defaultValue={props?.toy?.quantity}
@@ -74,7 +74,7 @@ const UpdateToyModal = (props) => {
             <span className="text-2xl">description : </span>
 
             <input
-              className="form-input"
+              className="form-input text-2xl"
               {...register("description")}
               placeholder="description"
               defaultValue={props?.toy?.description}
@@ -83,7 +83,7 @@ const UpdateToyModal = (props) => {
             <span className="text-2xl"> URL: </span>
 
             <input
-              className="text-input"
+              className="text-input text-2xl"
               {...register("URL")}
               placeholder="URL link"
               type="url"
@@ -98,7 +98,7 @@ const UpdateToyModal = (props) => {
             <span className="text-2xl">Subcategory : </span>
 
             <select
-              className="form-select"
+              className="form-select text-2xl"
               {...register("subCategory")}
               defaultValue={props?.toy?.subCategory}
             >
@@ -107,7 +107,11 @@ const UpdateToyModal = (props) => {
               <option value="police">Police Car</option>
             </select>
 
-            <input className="btn" value="Update Job" type="submit" />
+            <input
+              className="btn text-lg font-bold w-96 mx-auto"
+              value="Update Job"
+              type="submit"
+            />
           </form>
         </div>
         <label className="modal-backdrop" htmlFor={props?.toy?._id} />
