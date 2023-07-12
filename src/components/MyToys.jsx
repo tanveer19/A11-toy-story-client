@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../providers/AuthProvider";
 import UpdateToyModal from "./UpdateToyModal";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -27,7 +28,6 @@ const MyToys = () => {
   };
   // update using modal
   const handleToyUpdate = (data) => {
-    console.log(data);
     fetch(`http://localhost:5000/updateToy/${data._id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -38,25 +38,34 @@ const MyToys = () => {
         if (result.modifiedCount > 0) {
           setControl(!control);
         }
-        console.log(result);
       });
   };
 
   // delete
   const handleDelete = (id) => {
-    const proceed = confirm("sure?");
-    if (proceed) {
-      fetch(`http://localhost:5000/toys/${id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.deletedCount > 0) {
-            alert("deleted ");
-          }
-        });
-    }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/toys/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              setControl(!control);
+            }
+          });
+      }
+    });
   };
   return (
     <div>
@@ -140,7 +149,10 @@ const MyToys = () => {
                     ></UpdateToyModal>
                   </td>
                   <td>
-                    <button onClick={() => handleDelete(_id)} className="btn">
+                    <button
+                      onClick={() => handleDelete(toy._id)}
+                      className="btn"
+                    >
                       Delete
                     </button>
                   </td>
