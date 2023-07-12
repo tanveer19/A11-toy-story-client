@@ -7,8 +7,8 @@ const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const [modalShow, setModalShow] = React.useState(false);
-  const [control, setControl] = useState(false);
+  const [modalShow, setModalShow] = useState("false");
+  const [control, setControl] = useState("false");
 
   useEffect(() => {
     fetch(`http://localhost:5000/mytoys?sellerEmail=${user?.email}`)
@@ -25,7 +25,7 @@ const MyToys = () => {
         setToys(data);
       });
   };
-
+  // update using modal
   const handleToyUpdate = (data) => {
     console.log(data);
     fetch(`http://localhost:5000/updateToy/${data._id}`, {
@@ -42,6 +42,22 @@ const MyToys = () => {
       });
   };
 
+  // delete
+  const handleDelete = (id) => {
+    const proceed = confirm("sure?");
+    if (proceed) {
+      fetch(`http://localhost:5000/toys/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            alert("deleted ");
+          }
+        });
+    }
+  };
   return (
     <div>
       <Helmet>
@@ -119,13 +135,14 @@ const MyToys = () => {
 
                     <UpdateToyModal
                       show={modalShow}
-                      onHide={() => setModalShow(false)}
                       toy={toy}
                       handleToyUpdate={handleToyUpdate}
                     ></UpdateToyModal>
                   </td>
                   <td>
-                    <button className="btn">Delete</button>
+                    <button onClick={() => handleDelete(_id)} className="btn">
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))}
