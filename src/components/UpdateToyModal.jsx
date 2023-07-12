@@ -19,24 +19,23 @@ const UpdateToyModal = (props) => {
       <input type="checkbox" id={props?.toy?._id} className="modal-toggle" />
       <div className="modal">
         <div className="modal-box">
-          <h3 className="text-lg font-bold">Update </h3>
+          <h3 className="text-lg font-bold text-center m-3">Update Toy</h3>
           <form
-            className="container text-center"
-            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col"
+            onSubmit={handleSubmit(handleToyUpdate)}
           >
             {errors.exampleRequired && <span>This field is required</span>}
+
+            <span className="text-2xl">Seller Name: </span>
+
             <input
               className="form-input"
               {...register("sellerName")}
               placeholder="Title"
               defaultValue={props?.toy?.sellerName}
             />
-            <input
-              className="form-input d-none"
-              {...register("quantity")}
-              placeholder="quantity"
-              value={props?.toy?.quantity}
-            />
+
+            <span className="text-2xl">Toy Name: </span>
 
             <input
               className="form-input"
@@ -44,12 +43,60 @@ const UpdateToyModal = (props) => {
               placeholder="Toy Name"
               defaultValue={props?.toy?.name}
             />
+
+            <span className="text-2xl">Price : </span>
+
             <input
               className="form-input"
-              {...register("price", { required: true })}
+              {...register("price")}
               placeholder="price"
               defaultValue={props?.toy?.price}
             />
+            <span className="text-2xl">Rating : </span>
+
+            <input
+              className="form-input"
+              {...register("rating")}
+              placeholder="rating"
+              type="number"
+              defaultValue={props?.toy?.rating}
+            />
+
+            <span className="text-2xl">Quantity : </span>
+
+            <input
+              className="form-input"
+              {...register("quantity")}
+              placeholder="quantity"
+              defaultValue={props?.toy?.quantity}
+            />
+
+            <span className="text-2xl">description : </span>
+
+            <input
+              className="form-input"
+              {...register("description")}
+              placeholder="description"
+              defaultValue={props?.toy?.description}
+            />
+
+            <span className="text-2xl"> URL: </span>
+
+            <input
+              className="text-input"
+              {...register("URL")}
+              placeholder="URL link"
+              type="url"
+              defaultValue={props?.toy?.URL}
+            />
+
+            <input
+              className="text-input hidden"
+              {...register("_id")}
+              value={props?.toy?._id}
+            />
+            <span className="text-2xl">Subcategory : </span>
+
             <select
               className="form-select"
               {...register("subCategory")}

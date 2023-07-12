@@ -8,6 +8,7 @@ const MyToys = () => {
   const [toys, setToys] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [modalShow, setModalShow] = React.useState(false);
+  const [control, setControl] = useState(false);
 
   useEffect(() => {
     fetch(`http://localhost:5000/mytoys?sellerEmail=${user?.email}`)
@@ -15,7 +16,7 @@ const MyToys = () => {
       .then((data) => {
         setToys(data);
       });
-  }, [user]);
+  }, [user, control]);
 
   const handleSearch = () => {
     fetch(`http://localhost:5000/toySearchByTitle/${searchText}`)
