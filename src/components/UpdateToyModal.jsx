@@ -108,8 +108,8 @@ const UpdateToyModal = (props) => {
             </select>
 
             <input
-              className="btn text-lg font-bold w-96 mx-auto"
-              value="Update Job"
+              className="btn text-lg font-bold col-span-2"
+              value="Update Toy"
               type="submit"
             />
           </form>
