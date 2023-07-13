@@ -83,7 +83,7 @@ const UpdateToyModal = (props) => {
             <span className="text-2xl"> URL: </span>
 
             <input
-              className="text-input text-2xl"
+              className="text-input"
               {...register("URL")}
               placeholder="URL link"
               type="url"

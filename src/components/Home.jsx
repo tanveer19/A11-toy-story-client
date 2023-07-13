@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import img1 from "/images/car1.jpg";
 import img2 from "/images/car2.jpg";
 import img3 from "/images/car3.jpg";
@@ -6,8 +6,12 @@ import img4 from "/images/car4.jpg";
 import img5 from "/images/car5.png";
 import img6 from "/images/car6.png";
 import { Helmet } from "react-helmet-async";
+import Aos from "aos";
 
 const Home = () => {
+  useEffect(() => {
+    Aos.refresh(); // Refresh AOS after rendering the component
+  }, []);
   return (
     <div>
       <Helmet>
@@ -49,22 +53,22 @@ const Home = () => {
       </div>
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-2 mx-auto">
         <div className="w-full">
-          <img src={img6} alt="" data-aos="fade-zoom-in" />
+          <img src={img6} alt="" data-aos="fade-down" />
         </div>
         <div className="w-full">
-          <img src={img5} alt="" data-aos="fade-zoom-in" />
+          <img src={img5} alt="" data-aos="fade-down" />
         </div>
         <div className="w-full">
-          <img src={img6} alt="" data-aos="fade-zoom-in" />
+          <img src={img6} alt="" data-aos="zoom-in" />
         </div>
         <div className="w-full">
-          <img src={img5} alt="" />
+          <img src={img5} alt="" data-aos="zoom-in" />
         </div>
         <div className="w-full">
-          <img src={img6} alt="" />
+          <img src={img5} alt="" data-aos="fade-up" />
         </div>
         <div className="w-full">
-          <img src={img5} alt="" />
+          <img src={img5} alt="" data-aos="fade-up" />
         </div>
       </div>
     </div>

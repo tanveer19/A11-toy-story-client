@@ -17,6 +17,8 @@ import Blogs from "./components/Blogs";
 import ShopByCategory from "./components/ShopByCategory";
 import { HelmetProvider } from "react-helmet-async";
 import ToysDetails from "./components/ToysDetails";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 const router = createBrowserRouter([
   {
@@ -85,6 +87,9 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
+// Initialize AOS
+AOS.init();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
