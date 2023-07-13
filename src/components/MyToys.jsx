@@ -7,9 +7,9 @@ import Swal from "sweetalert2";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
-  const [searchText, setSearchText] = useState("");
   const [modalShow, setModalShow] = useState("false");
   const [control, setControl] = useState("false");
+  // const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetch(`http://localhost:5000/mytoys?sellerEmail=${user?.email}`)
@@ -19,14 +19,16 @@ const MyToys = () => {
       });
   }, [user, control]);
 
-  const handleSearch = () => {
-    fetch(`http://localhost:5000/toySearchByTitle/${searchText}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setToys(data);
-      });
-  };
+  // const handleSearch = () => {
+  //   fetch(`http://localhost:5000/toySearchByTitle/${searchText}`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setToys(data);
+  //     });
+  // };
+
   // update using modal
+
   const handleToyUpdate = (data) => {
     Swal.fire({
       title: "Do you want to save the changes?",
@@ -46,7 +48,8 @@ const MyToys = () => {
             if (result.modifiedCount > 0) {
               setControl(!control);
               Swal.fire("Saved!", "", "success");
-              setModalShow(false); // Close the modal
+              // Close the modal
+              setModalShow(false);
             }
           });
       } else if (result.isDenied) {
@@ -56,6 +59,7 @@ const MyToys = () => {
   };
 
   // delete
+
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -85,7 +89,8 @@ const MyToys = () => {
       <Helmet>
         <title>Toy Story | My Toys </title>
       </Helmet>
-      <div className="m-auto w-1/3">
+
+      {/* <div className="m-auto w-1/3">
         <input
           onChange={(e) => setSearchText(e.target.value)}
           type="text"
@@ -95,7 +100,8 @@ const MyToys = () => {
         <button onClick={handleSearch} className="btn ghost mx-2">
           Search
         </button>
-      </div>
+      </div> */}
+
       <div>
         <div className="overflow-x-auto">
           <table className="table table-xs">

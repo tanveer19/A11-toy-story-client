@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ViewToyModal from "./ViewToyModal";
 
-const Toy = ({ toy }) => {
+const Toy = ({ toy, index }) => {
   const {
     _id,
     URL,
@@ -17,6 +17,7 @@ const Toy = ({ toy }) => {
 
   return (
     <tr>
+      <td>{index + 1}</td>
       <td>
         <label>
           <input type="checkbox" className="checkbox" />
