@@ -94,7 +94,7 @@ const MyToys = () => {
         <input
           onChange={(e) => setSearchText(e.target.value)}
           type="text"
-          placeholder="Type seller or Toy Name"
+          placeholder="Type Toy Name"
           className="input input-bordered w-fit"
         />
         <button onClick={handleSearch} className="btn ghost mx-2">

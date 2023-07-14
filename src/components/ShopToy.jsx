@@ -1,6 +1,19 @@
 import React from "react";
+import ViewToyModal from "./ViewToyModal";
 
 const shopToy = ({ toy }) => {
+  const {
+    _id,
+    URL,
+    name,
+    sellerName,
+    sellerEmail,
+    subCategory,
+    price,
+    rating,
+    quantity,
+    description,
+  } = toy || {};
   return (
     <div>
       <div className="card w-96 bg-base-100 shadow-xl m-2">
@@ -12,7 +25,11 @@ const shopToy = ({ toy }) => {
           <h2 className="card-title">Toy Name: {toy.name}</h2>
           <p className="card-title">Price: {toy.price}</p>
           <p className="card-title">Rating: {toy.rating}</p>
-          <button className="btn">View Details</button>
+          {/* The button to open modal */}
+          <label htmlFor={_id} className="btn">
+            Details
+          </label>
+          <ViewToyModal toy={toy}></ViewToyModal>
         </div>
       </div>
     </div>

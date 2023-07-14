@@ -12,7 +12,7 @@ const AllToys = () => {
       .then((result) => {
         setToys(result);
       });
-  });
+  }, []);
 
   const handleSearch = () => {
     fetch(`http://localhost:5000/toySearchByTitle/${searchText}`)

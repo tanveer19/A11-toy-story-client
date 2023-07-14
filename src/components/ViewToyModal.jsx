@@ -20,7 +20,7 @@ const ViewToyModal = ({ toy }) => {
       <input type="checkbox" id={_id} className="modal-toggle" />
       <div className="modal">
         <div className="modal-box">
-          <img src={toy.URL} alt="toypic" />
+          <img className="mx-auto" src={toy.URL} alt="toypic" />
           <div className="grid grid-cols-2 justify-items-center">
             <div>
               <h3 className="text-lg font-bold">Toy Name:</h3>
