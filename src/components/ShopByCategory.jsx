@@ -8,7 +8,9 @@ const ShopByCategory = () => {
   const [activeTab, setActivetab] = useState("sports");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/alltoys/${activeTab}`)
+    fetch(
+      `https://2-19-a11-toy-server-tanveer19.vercel.app/alltoys/${activeTab}`
+    )
       .then((res) => res.json())
       .then((result) => setToys(result));
   }, [activeTab]);
