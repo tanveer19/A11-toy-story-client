@@ -1,5 +1,6 @@
 import React from "react";
-import ViewToyModal from "./ViewToyModal";
+import { Link } from "react-router-dom";
+// import ViewToyModal from "./ViewToyModal";
 
 const shopToy = ({ toy }) => {
   const {
@@ -25,11 +26,14 @@ const shopToy = ({ toy }) => {
           <h2 className="card-title">Toy Name: {toy.name}</h2>
           <p className="card-title">Price: {toy.price}</p>
           <p className="card-title">Rating: {toy.rating}</p>
-          {/* The button to open modal */}
-          <label htmlFor={_id} className="btn">
+          <Link to={`/toysdetails/${toy._id}`}>
+            <button className="btn btn-accent my-2">Details</button>
+          </Link>
+          {/* modal option*/}
+          {/* <label htmlFor={_id} className="btn">
             Details
           </label>
-          <ViewToyModal toy={toy}></ViewToyModal>
+          <ViewToyModal toy={toy}></ViewToyModal> */}
         </div>
       </div>
     </div>
