@@ -83,9 +83,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://2-19-a11-toy-server-tanveer19.vercel.app/alltoys/${params.id}`
-          ),
+          fetch(`http://localhost:5000/alltoys/${params.id}`),
       },
     ],
   },

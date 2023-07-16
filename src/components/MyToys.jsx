@@ -12,9 +12,7 @@ const MyToys = () => {
   // const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
-    fetch(
-      `https://2-19-a11-toy-server-tanveer19.vercel.app/mytoys?sellerEmail=${user?.email}`
-    )
+    fetch(`http://localhost:5000/mytoys?sellerEmail=${user?.email}`)
       .then((result) => result.json())
       .then((data) => {
         setToys(data);
@@ -40,14 +38,11 @@ const MyToys = () => {
       denyButtonText: `Don't save`,
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(
-          `https://2-19-a11-toy-server-tanveer19.vercel.app/updateToy/${data._id}`,
-          {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data),
-          }
-        )
+        fetch(`http://localhost:5000/updateToy/${data._id}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        })
           .then((res) => res.json())
           .then((result) => {
             if (result.modifiedCount > 0) {
@@ -76,7 +71,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://2-19-a11-toy-server-tanveer19.vercel.app/toys/${id}`, {
+        fetch(`http://localhost:5000/toys/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

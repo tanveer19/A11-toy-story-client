@@ -1,20 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
-// import ViewToyModal from "./ViewToyModal";
+import { Link, useParams } from "react-router-dom";
 
 const shopToy = ({ toy }) => {
-  const {
-    _id,
-    URL,
-    name,
-    sellerName,
-    sellerEmail,
-    subCategory,
-    price,
-    rating,
-    quantity,
-    description,
-  } = toy || {};
   return (
     <div>
       <div className="card w-96 bg-base-100 shadow-xl m-2">
@@ -29,6 +16,7 @@ const shopToy = ({ toy }) => {
           <Link to={`/toysdetails/${toy._id}`}>
             <button className="btn btn-accent my-2">Details</button>
           </Link>
+
           {/* modal option*/}
           {/* <label htmlFor={_id} className="btn">
             Details
