@@ -21,7 +21,7 @@ const AddAToy = () => {
       timer: 1500,
     });
 
-    fetch("https://2-19-a11-toy-server-tanveer19.vercel.app/postToy", {
+    fetch("https://2-19-a11-toy-server.vercel.app/postToy", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
