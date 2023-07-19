@@ -21,14 +21,6 @@ const MyToys = () => {
       });
   }, [user, control]);
 
-  // const handleSearch = () => {
-  //   fetch(`:5000/toySearchByTitle/${searchText}`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setToys(data);
-  //     });
-  // };
-
   // update using modal
 
   const handleToyUpdate = (data) => {
@@ -91,18 +83,6 @@ const MyToys = () => {
       <Helmet>
         <title>Toy Story | My Toys </title>
       </Helmet>
-
-      {/* <div className="m-auto w-1/3">
-        <input
-          onChange={(e) => setSearchText(e.target.value)}
-          type="text"
-          placeholder="Type Toy Name"
-          className="input input-bordered w-fit"
-        />
-        <button onClick={handleSearch} className="btn ghost mx-2">
-          Search
-        </button>
-      </div> */}
 
       <div>
         <div className="overflow-x-auto">
