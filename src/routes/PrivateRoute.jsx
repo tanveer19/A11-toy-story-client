@@ -7,7 +7,11 @@ const PrivateRoute = ({ children }) => {
   const location = useLocation();
   // showing progress bar during loading private route pages
   if (loading) {
-    return <progress className="progress w-56"></progress>;
+    return (
+      <div className="flex justify-center items-center ">
+        <progress className="progress w-56"></progress>
+      </div>
+    );
   }
 
   if (user) {

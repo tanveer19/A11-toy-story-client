@@ -12,7 +12,7 @@ const Profile = () => {
           <title>Toy Story | Profile </title>
         </Helmet>
       </div>
-      <div>My email: {user?.email}</div>
+      <div className="w-fit mx-auto">Your email: {user?.email}</div>
     </div>
   );
 };
