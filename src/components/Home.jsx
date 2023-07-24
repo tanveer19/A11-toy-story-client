@@ -66,25 +66,26 @@ const Home = () => {
       {/* gallery */}
 
       <h2 className="text-5xl text-center bg-sky-600 m-3 p-3">Gallery</h2>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 max-w-screen-xl mx-auto">
-        <div className="w-full">
-          <img src={img6} alt="" data-aos="fade-down" />
-        </div>
-        <div className="w-full">
-          <img src={img5} alt="" data-aos="fade-down" />
-        </div>
-        <div className="w-full">
-          <img src={img6} alt="" data-aos="zoom-in" />
-        </div>
-        <div className="w-full">
-          <img src={img5} alt="" data-aos="zoom-in" />
-        </div>
-        <div className="w-full">
-          <img src={img5} alt="" data-aos="fade-up" />
-        </div>
-        <div className="w-full">
-          <img src={img5} alt="" data-aos="fade-up" />
+      <div class="flex items-center justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 max-w-screen-xl ">
+          <div className="w-full">
+            <img src={img6} alt="" data-aos="fade-down" />
+          </div>
+          <div className="w-full">
+            <img src={img5} alt="" data-aos="fade-down" />
+          </div>
+          <div className="w-full">
+            <img src={img6} alt="" data-aos="zoom-in" />
+          </div>
+          <div className="w-full">
+            <img src={img5} alt="" data-aos="zoom-in" />
+          </div>
+          <div className="w-full">
+            <img src={img5} alt="" data-aos="fade-up" />
+          </div>
+          <div className="w-full">
+            <img src={img5} alt="" data-aos="fade-up" />
+          </div>
         </div>
       </div>
 
