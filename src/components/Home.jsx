@@ -8,6 +8,11 @@ import img6 from "/images/car6.png";
 import { Helmet } from "react-helmet-async";
 import Aos from "aos";
 import ShopToy from "./ShopToy";
+import GridSections from "./GridSections";
+import Contact from "./Contact";
+import About from "./About";
+import News from "./News";
+import Drawer from "./Drawer";
 
 const Home = () => {
   useEffect(() => {
@@ -65,8 +70,8 @@ const Home = () => {
 
       {/* gallery */}
 
-      <h2 className="text-5xl text-center bg-sky-600 m-3 p-3">Gallery</h2>
-      <div class="flex items-center justify-center">
+      <h2 className="text-5xl text-center bg-sky-600 p-3">Gallery</h2>
+      <div className="flex items-center justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 max-w-screen-xl ">
           <div className="w-full">
             <img src={img6} alt="" data-aos="fade-down" />
@@ -91,9 +96,7 @@ const Home = () => {
 
       {/* shop by category */}
 
-      <h2 className="text-5xl text-center bg-sky-600 m-3 p-3">
-        Shop by Category
-      </h2>
+      <h2 className="text-5xl text-center bg-sky-600 p-3">Shop by Category</h2>
 
       <div className="flex m-4 justify-evenly ">
         <div
@@ -127,6 +130,12 @@ const Home = () => {
           <ShopToy key={toy._id} toy={toy}></ShopToy>
         ))}
       </div>
+
+      <GridSections></GridSections>
+      <Contact></Contact>
+      <About></About>
+      <News></News>
+      <Drawer></Drawer>
     </div>
   );
 };

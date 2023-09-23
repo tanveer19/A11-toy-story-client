@@ -8,6 +8,6 @@ A11-toy-story-client
 
 4. users can sign in using google/email
 
-5. search for specific toys is on all toys page.
+5. search for specific toys in on all toys page.
 
 Live site link: https://a11-toy.web.app/
