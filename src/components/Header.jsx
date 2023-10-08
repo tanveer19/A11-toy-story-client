@@ -15,11 +15,6 @@ const Header = () => {
   const navOptions = (
     <>
       <li>
-        <Link to="/">
-          <img src={img1} alt="" />
-        </Link>
-      </li>
-      <li>
         <Link to="/">Home</Link>
       </li>
 
@@ -92,8 +87,9 @@ const Header = () => {
             {navOptions}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
-          Toy Story
+
+        <Link to="/">
+          <img className="btn btn-ghost mx-auto" src={img1} alt="logo" />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">

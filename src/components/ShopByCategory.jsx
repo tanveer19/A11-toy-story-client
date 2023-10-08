@@ -22,6 +22,7 @@ const ShopByCategory = () => {
       <Helmet>
         <title>Toy Story | Shop By Category </title>
       </Helmet>
+      <h2 className="text-4xl text-center bg-sky-600 p-3">Shop by Category</h2>
 
       <div className="flex m-4 justify-evenly ">
         <div

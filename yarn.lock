@@ -2513,16 +2513,16 @@ csv-parse@^5.0.4:
   resolved "https://registry.yarnpkg.com/csv-parse/-/csv-parse-5.4.0.tgz#6793210a4a49a9a74b3fde3f9d00f3f52044fd89"
   integrity sha512-JiQosUWiOFgp4hQn0an+SBoV9IKdqzhROM0iiN4LB7UpfJBlsSJlWl9nq4zGgxgMAzHJ6V4t29VAVD+3+2NJAg==
 
-daisyui@^3.7.7:
-  version "3.7.7"
-  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-3.7.7.tgz#b1aaa8f6bd469e73e4a28392cd29800452bc84ab"
-  integrity sha512-2/nFdW/6R9MMnR8tTm07jPVyPaZwpUSkVsFAADb7Oq8N2Ynbls57laDdNqxTCUmn0QvcZi01TKl8zQbAwRfw1w==
+daisyui@^3.9.2:
+  version "3.9.2"
+  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-3.9.2.tgz#73c83d46ff86186568b211be2d231f4aee5a9ecc"
+  integrity sha512-yJZ1QjHUaL+r9BkquTdzNHb7KIgAJVFh0zbOXql2Wu0r7zx5qZNLxclhjN0WLoIpY+o2h/8lqXg7ijj8oTigOw==
   dependencies:
     colord "^2.9"
     css-selector-tokenizer "^0.8"
     postcss "^8"
     postcss-js "^4"
-    tailwindcss "^3"
+    tailwindcss "^3.1"
 
 dashdash@^1.12.0:
   version "1.14.1"
@@ -4725,6 +4725,11 @@ jws@^4.0.0:
     jwa "^2.0.0"
     safe-buffer "^5.0.1"
 
+keen-slider@^6.8.6:
+  version "6.8.6"
+  resolved "https://registry.yarnpkg.com/keen-slider/-/keen-slider-6.8.6.tgz#17bb7b219860f291a5ea5fde4496b737bf407a83"
+  integrity sha512-dcEQ7GDBpCjUQA8XZeWh3oBBLLmyn8aoeIQFGL/NTVkoEOsmlnXqA4QykUm/SncolAZYGsEk/PfUhLZ7mwMM2w==
+
 klaw@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/klaw/-/klaw-3.0.0.tgz#b11bec9cf2492f06756d6e809ab73a2910259146"
@@ -6816,36 +6821,7 @@ sweetalert2@^11.7.16:
   resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.7.16.tgz#e78f78325fcefd16498e6328c574f3d4446e505c"
   integrity sha512-vxqVcA358RWdK/XOG1gFtOzT7qBH186Ry4gnW0Xtrx7vIo1mpnR8hG8MxQms4gz3JPbYQ6UIgZn0+hTK7in3Jw==
 
-tailwindcss@^3:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-3.3.2.tgz#2f9e35d715fdf0bbf674d90147a0684d7054a2d3"
-  integrity sha512-9jPkMiIBXvPc2KywkraqsUfbfj+dHDb+JPWtSJa9MLFdrPyazI7q6WX2sUrm7R9eVR7qqv3Pas7EvQFzxKnI6w==
-  dependencies:
-    "@alloc/quick-lru" "^5.2.0"
-    arg "^5.0.2"
-    chokidar "^3.5.3"
-    didyoumean "^1.2.2"
-    dlv "^1.1.3"
-    fast-glob "^3.2.12"
-    glob-parent "^6.0.2"
-    is-glob "^4.0.3"
-    jiti "^1.18.2"
-    lilconfig "^2.1.0"
-    micromatch "^4.0.5"
-    normalize-path "^3.0.0"
-    object-hash "^3.0.0"
-    picocolors "^1.0.0"
-    postcss "^8.4.23"
-    postcss-import "^15.1.0"
-    postcss-js "^4.0.1"
-    postcss-load-config "^4.0.1"
-    postcss-nested "^6.0.1"
-    postcss-selector-parser "^6.0.11"
-    postcss-value-parser "^4.2.0"
-    resolve "^1.22.2"
-    sucrase "^3.32.0"
-
-tailwindcss@^3.3.3:
+tailwindcss@^3.1, tailwindcss@^3.3.3:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-3.3.3.tgz#90da807393a2859189e48e9e7000e6880a736daf"
   integrity sha512-A0KgSkef7eE4Mf+nKJ83i75TMyq8HqY3qmFIJSWy8bNt0v1lG7jUcpGpoTFxAwYcWOphcTBLPPJg+bDfhDf52w==

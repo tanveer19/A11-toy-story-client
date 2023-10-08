@@ -5,7 +5,7 @@ const About = () => {
     <div>
       <h1 className="text-5xl text-center my-3">About Us</h1>
       <div
-        className="hero min-h-screen"
+        className="hero md:min-h-screen"
         style={{
           backgroundImage: "url(/images/car2.jpg)",
         }}
