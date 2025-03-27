@@ -9,10 +9,11 @@ lerna-debug.log*
 
 node_modules
 .yarn
+.firebase
 dist
 dist-ssr
 *.local
-
+bun.lockb
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

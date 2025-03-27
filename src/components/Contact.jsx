@@ -4,7 +4,12 @@ const Contact = () => {
   return (
     <div>
       <div className="hero min-h-screen bg-base-200 ">
-        <div className="hero-content flex-col lg:flex-row-reverse border-x-4 border-green-500">
+        <div
+          className="hero-content flex-col lg:flex-row-reverse border-x-4 border-green-500"
+          data-aos="fade-up"
+          // data-aos-duration="1200"
+          // data-aos-delay="200"
+        >
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Contact Us now!</h1>
           </div>
